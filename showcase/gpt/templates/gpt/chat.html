@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Chat:</h1>
+  <br/>
+
+  {% for msg in chat %}
+  <p>{{msg}}</p>
+  {% endfor %}
+
+	<form action="" method=POST>			
+    {% csrf_token %}
+
+		<form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Input</label>
+        <input type="text" class="form-control" name="inp" aria-describedby="inputQuestionsHere">
+      </div>
+  
+			<input type="submit" value="Submit" class="btn btn-primary">
+		</form>
+{% endblock %}
